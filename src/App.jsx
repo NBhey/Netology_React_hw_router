@@ -1,25 +1,26 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import DriftPage from "./components/DriftPage";
 import ForzaPage from "./components/ForzaPage";
 import HomePage from "./components/HomePage";
 import TimeAttackPage from "./components/TimeAttackPage";
+// import "../src/index.css"
 
 function Menu() {
   return (
     <nav className="menu">
-      <a className="menu__item" href="/">
+      <Link className="menu__item" to="/">
         Главная
-      </a>
-      <a className="menu__item" href="/drift">
+      </Link>
+      <Link className="menu__item" to="/drift">
         Дрифт-такси
-      </a>
-      <a className="menu__item" href="/timeattack">
+      </Link>
+      <Link className="menu__item" to="/timeattack">
         Time Attack
-      </a>
-      <a className="menu__item" href="/forza">
+      </Link>
+      <Link className="menu__item" to="/forza">
         Forza Karting
-      </a>
+      </Link>
     </nav>
   );
 }
@@ -30,10 +31,12 @@ export default function App() {
       <div>
         <Menu />
         <div className="page">
-          <Route path="/" exact component={HomePage} />
-          <Route path="/drift" component={DriftPage} />
-          <Route path="/timeattack" component={TimeAttackPage} />
-          <Route path="/forza" component={ForzaPage} />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/drift" element={<DriftPage />} />
+            <Route path="/timeattack" element={<TimeAttackPage />} />
+            <Route path="/forza" element={<ForzaPage />} />
+          </Routes>
         </div>
       </div>
     </Router>
