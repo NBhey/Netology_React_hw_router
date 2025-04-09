@@ -9,7 +9,7 @@ import DriftPage from "./components/DriftPage";
 import ForzaPage from "./components/ForzaPage";
 import HomePage from "./components/HomePage";
 import TimeAttackPage from "./components/TimeAttackPage";
-// .menu__item-active
+
 function Menu() {
   return (
     <nav className="menu">
