@@ -1,26 +1,50 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink,
+} from "react-router-dom";
 import DriftPage from "./components/DriftPage";
 import ForzaPage from "./components/ForzaPage";
 import HomePage from "./components/HomePage";
 import TimeAttackPage from "./components/TimeAttackPage";
-// import "../src/index.css"
-
+// .menu__item-active
 function Menu() {
   return (
     <nav className="menu">
-      <Link className="menu__item" to="/">
+      <NavLink
+        className={({ isActive }) =>
+          `menu__item ${isActive ? "menu__item-active" : ""}`
+        }
+        to="/"
+      >
         Главная
-      </Link>
-      <Link className="menu__item" to="/drift">
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          `menu__item ${isActive ? "menu__item-active" : ""}`
+        }
+        to="/drift"
+      >
         Дрифт-такси
-      </Link>
-      <Link className="menu__item" to="/timeattack">
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          `menu__item ${isActive ? "menu__item-active" : ""}`
+        }
+        to="/timeattack"
+      >
         Time Attack
-      </Link>
-      <Link className="menu__item" to="/forza">
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          `menu__item ${isActive ? "menu__item-active" : ""}`
+        }
+        to="/forza"
+      >
         Forza Karting
-      </Link>
+      </NavLink>
     </nav>
   );
 }
